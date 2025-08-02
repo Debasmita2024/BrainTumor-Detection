@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #E6F7FF; /* Light Baby Blue */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .result-box {
+            background: #F0F8FF; /* Soft White-Blue */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            margin: 30px auto;
+            border: 3px solid #87CEFA; /* Soft Sky Blue Border */
+        }
+        h1 {
+            color: #4682B4; /* Nice Deep Blue */
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #4682B4;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        h2 {
+            color: #5F9EA0; /* Muted Blue-Green */
+            font-size: 18px;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            border: 2px solid #87CEFA; /* Light Blue Border */
+            padding: 5px;
+            border-radius: 10px;
+            background: white;
+            width: 45%;
+        }
+        img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            max-width: 350px;
+        }
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: white;
+            background: #4682B4; /* Deep Blue Button */
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        a:hover {
+            background: #4169E1; /* Royal Blue */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-box">
+        <h1>Prediction Result</h1>
+        <p><strong>Prediction:</strong> {{ prediction }}</p>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+        
+        <h2>MRI Scan Results</h2>
+        <div class="image-container">
+            <div class="image-box">
+                <p><strong>Uploaded MRI Image</strong></p>
+                <img src="{{ url_for('display_image', filename=filename) }}">
+            </div>
+            {% if highlighted_img %}
+            <div class="image-box">
+                <p><strong>Tumor Highlighted</strong></p>
+                <img src="{{ url_for('display_image', filename=highlighted_img) }}">
+            </div>
+            {% endif %}
+        </div>
+
+        <br>
+        <a href="/">Upload Another Image</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #FFE4F2; /* Light Pink Background */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #FFF5FF; /* Soft White-Pink */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 5px solid #FFB6C1; /* Pastel Pink Border */
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #FFB6C1; /* Pink Border */
+        }
+        h1 {
+            color: #D63384; /* Cute Pink */
+            font-size: 28px;
+        }
+        input[type="file"] {
+            padding: 12px;
+            border: 3px dashed #FF69B4; /* Bright Pink Dashed Border */
+            width: 95%;
+            cursor: pointer;
+            background: #FFF0F5;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        button {
+            background: #FF69B4; /* Hot Pink */
+            color: white;
+            padding: 14px 22px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #FF1493; /* Darker Pink */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="static/logo.png" alt="Brain Tumor Logo" class="logo">
+        <h1>BRAIN TUMOR DETECTION</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br>
+            <button type="submit">Upload & Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>
